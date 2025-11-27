@@ -1,0 +1,6 @@
+@LarAPP_HostAddress = http://localhost:5102
+
+GET {{LarAPP_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
