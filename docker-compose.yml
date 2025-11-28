@@ -1,9 +1,9 @@
 version: '3.8'
 
 services:
-  projeto_lar:
+  larapp:
     container_name: LarAPP_api
-    build:
+    build: 
       context: .
       dockerfile: LarAPP/Dockerfile
     ports:
