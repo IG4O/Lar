@@ -2,7 +2,12 @@
 
 namespace LarAPP.src.Entities
 {
-    public enum TipoTelefone { Celular, Residencial, Comercial }
+    public enum TipoTelefone
+    {
+        Residencial = 0,
+        Celular = 1,
+        Comercial = 2
+    }
 
     public class Telefone
     {

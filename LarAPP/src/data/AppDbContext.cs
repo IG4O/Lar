@@ -1,9 +1,8 @@
-﻿//using LarAPP.src.Entities;
-using LarAPP.src.Entities;
+﻿using LarAPP.src.Entities;
 using Microsoft.EntityFrameworkCore;
 
 
-namespace Projeto.Api.Data
+namespace LarAPP.Api.Data
 {
     public class AppDbContext : DbContext
     {
@@ -21,6 +20,7 @@ namespace Projeto.Api.Data
                 entity.HasKey(e => e.Id);
                 entity.Property(e => e.Nome).IsRequired().HasMaxLength(200);
                 entity.Property(e => e.CPF).IsRequired().HasMaxLength(11);
+                entity.Property(e => e.DataNascimento).IsRequired();
             });
 
 
@@ -28,7 +28,9 @@ namespace Projeto.Api.Data
             {
                 entity.HasKey(e => e.Id);
                 entity.Property(e => e.Numero).IsRequired().HasMaxLength(20);
-                entity.Property(e => e.Tipo).IsRequired();
+                entity.Property(t => t.Tipo)
+                .HasConversion<string>()
+                .IsRequired();
                 entity.HasOne(t => t.Pessoa)
                 .WithMany(p => p.Telefones)
                 .HasForeignKey(t => t.PessoaId)

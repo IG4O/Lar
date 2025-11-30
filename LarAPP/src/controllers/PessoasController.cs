@@ -1,6 +1,8 @@
 ﻿using LarAPP.src.DTOs.PessoaDTO;
-using Microsoft.AspNetCore.Mvc;
+using LarAPP.src.Entities;
+using LarAPP.src.Repositories;
 using LarAPP.src.Services;
+using Microsoft.AspNetCore.Mvc;
 
 namespace LarAPP.src.Controllers
 {
@@ -8,7 +10,8 @@ namespace LarAPP.src.Controllers
     [Route("api/[controller]")]
     public class PessoasController : ControllerBase
     {
-        private readonly IPessoaService _service;
+        private readonly IPessoaService _service;        
+
         public PessoasController(IPessoaService service) => _service = service;
 
 
