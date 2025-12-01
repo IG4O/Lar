@@ -11,6 +11,5 @@ namespace LarAPP.src.DTOs.TelefoneDTO
         int Id,
         string Numero,
         TipoTelefone Tipo
-    );
-    //public record UpdateTelefoneDTO(int Id, int PessoaId, string Numero, string Tipo);
+    );    
 }
